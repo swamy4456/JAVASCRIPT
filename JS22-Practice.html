@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>login Validation</title>
+        <script>
+            function logValidation()
+            {
+                var uname = document.myform.username.value;
+                var pass = document.myform.password.value;
+                if(uname === "" || pass.length === 0 || uname === null)
+                {
+                    alert("Please enter username and password");
+                    return false;
+                }
+                else if(pass.length<6)
+                {
+                    alert("Password must be at least 6 characters long");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform" action="Loginsuccess.html" onsubmit="return logValidation(this)">
+            <center>
+            UserName:<input type="text" name="username"><br><br>
+            Password:<input type="password" name="password"><br><br>
+            <input type="submit" value="Login"><br>
+            </center>
+        </form>
+    </body>
+</html>
